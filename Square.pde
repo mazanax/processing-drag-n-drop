@@ -13,8 +13,6 @@ class Square extends GameObject {
     } else {
       currentColor = Color.HOVER;
     }
-    
-    println(pos.x, pos.y);
   }
   
   public void draw() {

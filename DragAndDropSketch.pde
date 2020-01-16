@@ -25,7 +25,7 @@ void setup() {
   pixelDensity(displayDensity());
   
   for (int i = 0; i < 5; i++) {
-    GameObject box = new Draggable(new Square(10 + 60 * i, 10, 50, 50));
+    GameObject box = new DraggableDecorator(new Square(10 + 60 * i, 10, 50, 50));
     gameObjects.add(box);
   }
   
@@ -64,8 +64,21 @@ void draw() {
   }
 }
 
-void mousePressed() {
+void mousePressed() {  
   MouseEvent event = new MouseEvent();
+  MouseInteractable target = getMouseTarget();
+  event.setTarget(target);
+  
+  for (MouseInteractable o : mouseInteractables) {
+    o.onMousePressed(event);
+  }
+}
+
+MouseInteractable getMouseTarget() {
+  if (mouseInteractables.size() == 0) {
+    return null;
+  }
+  
   MouseInteractable target = mouseInteractables.get(0);
   
   for (MouseInteractable o : mouseInteractables) {
@@ -73,11 +86,8 @@ void mousePressed() {
       target = o;
     }
   }
-  event.setTarget(target);
   
-  for (MouseInteractable o : mouseInteractables) {
-    o.onMousePressed(event);
-  }
+  return target;
 }
 
 void mouseReleased() {
