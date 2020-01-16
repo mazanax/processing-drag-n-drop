@@ -1,6 +1,8 @@
 # Drag&drop example in Processing
 
-Туториал на русском языке (Tutorial in Russian): https://mznx.ru/6-drag-n-drop-java-processing
+![Demonstration](https://mznx.ru/uploads/upload_5e20ba544b0241.58655894.gif "Демонстрация работы")
+
+Туториал на русском языке (Tutorial in Russian): https://mznx.ru/6-drag-n-drop-java-processing<br>
 Демонстрация работы (Demo): https://www.youtube.com/watch?v=KcTzZLQDlEc
 
 ## How to install
